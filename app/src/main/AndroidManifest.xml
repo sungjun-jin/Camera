@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <provider
-            android:authorities="${applicationId}.provider"
+            android:authorities="${applicationId}.provider" <!-- Gradle에 있는 applicationId를 변수로 가져옴 ${}를 사용-->
             android:name="android.support.v4.content.FileProvider"
             android:grantUriPermissions="true"
             android:exported="false"> <!-- exported가 true이면 다른 앱에서도 내 모듈이 사용가능하다 -->
