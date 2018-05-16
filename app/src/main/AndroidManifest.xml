@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.jinsungjun.camera">
+
+    <!--권한 주기-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- use-feature 권한이 필요한 모듈이 없는 폰에서도 쓸 수 있게 허용, default가 true인데, false로 하면 해당 기능이 없어도 설치할 수 있다 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:authorities="${applicationId}.provider"
+            android:name="android.support.v4.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false"> <!-- exported가 true이면 다른 앱에서도 내 모듈이 사용가능하다 -->
+
+            <meta-data
+                android:name = "android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"/>
+        </provider>
+    </application>
+</manifest>

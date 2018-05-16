@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--안드로이드에서 사진을 찍을 디렉토리를 미리 저장
+    name : Uri 주소체계 -> content://Camera/어쩌고저쩌고/이미지.jpg
+    path : 실제 디렉토리 이름-->
+    <external-path
+        name = "Camera"
+        path="CameraDir"/>
+
+
+</paths>
